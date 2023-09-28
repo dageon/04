@@ -4,10 +4,17 @@
 int main(int argc, char *argv[]) {
 	int a;
 	
-	printf("input seconds : ");
+	printf("input the year : ");
 	scanf("%i", &a);
 
-	printf("the time is %i : %i \n", a/60, a%60);
+	if ( (a%4==0 && a%100!=0) || (a%400==0) )
+	{
+		printf("is the year %i the leap year? : 1 \n", a);
+	}
+	else
+	{
+		printf("is the year %i the leap year? : 0 \n", a);
+	}
 	
 	return 0;
 }
