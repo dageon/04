@@ -2,19 +2,21 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	int a;
+	unsigned int x;
+	int b;
 	
-	printf("input the year : ");
-	scanf("%i", &a);
-
-	if ( (a%4==0 && a%100!=0) || (a%400==0) )
+	printf("input a number : ");
+	scanf("%ui", &x);
+	
+	for (b=0; x != 0; x >>= 1) // -> x = x >> 1
 	{
-		printf("is the year %i the leap year? : 1 \n", a);
+		if (x & 1)
+		{
+			b++;
+		}
 	}
-	else
-	{
-		printf("is the year %i the leap year? : 0 \n", a);
-	}
+	
+	printf("The result is : %i\n", b);
 	
 	return 0;
 }
